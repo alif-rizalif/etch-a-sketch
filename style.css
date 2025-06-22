@@ -6,9 +6,48 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100dvh;
+    gap: 20px;
+}
+
+.custom-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.custom-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+input {
+    padding: 5px 10px;
+}
+
+#custom-button {
+    color: white;
+    padding: 10px 15px;
+    background-color: #111827;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+#custom-button:hover {
+    background-color: #4a4c52;
+}
+
+#custom-button:active {
+    background-color: #000000;
+    color: white;
 }
 
 .container {
@@ -16,15 +55,19 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-height: 544px;
-    min-height: 544px;
-    max-width: 544px;
-    min-width: 544px;
+    /* max-height: 640px;
+    min-height: 640px;
+    max-width: 640px;
+    min-width: 640px; */
     border: black 2px solid;
 }
 
 .square1 {
-    height: 15px;
-    width: 15px;
+    height: 8px;
+    width: 8px;
     border: rgba(0, 0, 0, 0.1) 1px solid;
+}
+
+.black-square {
+    background-color: black;
 }
