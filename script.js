@@ -1,6 +1,9 @@
 // Add Custom Button Element
 const btnCustom = document.querySelector("#custom-button");
 
+// Add Size Text
+const sizeText = document.querySelector(".size-text");
+
 // Declare Default Size Grid
 let defaultWidth = 64;
 let defaultHeight = 64;
@@ -64,4 +67,6 @@ btnCustom.addEventListener("click", () => {
   defaultWidth = widthUser;
   defaultHeight = heightUser;
   heightGrid();
+
+  sizeText.textContent = `${widthUser} x ${heightUser}`;
 });
