@@ -31,23 +31,39 @@ input {
     padding: 5px 10px;
 }
 
-#custom-button {
-    color: white;
+.button {
     padding: 10px 15px;
-    background-color: #111827;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-#custom-button:hover {
+.btn-black {
+    background-color: #111827;
+    color: white;
+}
+
+.btn-black:hover {
     background-color: #4a4c52;
 }
 
-#custom-button:active {
+.btn-black:active {
     background-color: #000000;
     color: white;
+}
+
+.btn-red {
+    color: white;
+    background-color: #C62E2E;
+}
+
+.btn-red:hover {
+    background-color: #fc3e3e;
+}
+
+.btn-red:active {
+    background-color: #7c1c1c;
 }
 
 .container {

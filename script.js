@@ -1,6 +1,9 @@
 // Add Custom Button Element
 const btnCustom = document.querySelector("#custom-button");
 
+// Add Clear Button Element
+const btnClear = document.querySelector("#clear-button");
+
 // Add Size Text
 const sizeText = document.querySelector(".size-text");
 
@@ -40,18 +43,8 @@ function heightGrid() {
 
 heightGrid();
 
-// Add Button Fuction
-btnCustom.addEventListener("click", () => {
-  // User Input
-  let widthUser = document.querySelector("#width-input").value;
-  let heightUser = document.querySelector("#height-input").value;
-  console.log(`Width : ${widthUser}, Height : ${heightUser}`);
-
-  if (heightUser > 80) return alert("Sorry, Maximal Width is 80");
-  //   console.log(!widthUser);
-  if (!widthUser || !heightUser || widthUser <= 0 || heightUser <= 0)
-    return alert("Wrong Input");
-
+// Remove Old and Add New Container
+function reContainer() {
   // Remove Old Container
   const containerToRemove = document.body.children[1];
   document.body.removeChild(containerToRemove);
@@ -63,10 +56,35 @@ btnCustom.addEventListener("click", () => {
   // Add New Container After Custom Area
   const customArea = document.querySelector(".custom-area");
   customArea.after(container);
+}
+
+// Add Custom Button Fuction
+btnCustom.addEventListener("click", () => {
+  // User Input
+  let widthUser = document.querySelector("#width-input").value;
+  let heightUser = document.querySelector("#height-input").value;
+  console.log(`Width : ${widthUser}, Height : ${heightUser}`);
+
+  if (heightUser > 80) return alert("Sorry, Maximal Width is 80");
+  //   console.log(!widthUser);
+  if (!widthUser || !heightUser || widthUser <= 0 || heightUser <= 0)
+    return alert("Wrong Input");
+
+  reContainer();
 
   defaultWidth = widthUser;
   defaultHeight = heightUser;
   heightGrid();
 
   sizeText.textContent = `${widthUser} x ${heightUser}`;
+});
+
+// Add Clear Button Function
+// const square = document.querySelector(".square1");
+btnClear.addEventListener("click", () => {
+  reContainer();
+
+  heightGrid();
+
+  sizeText.textContent = `${defaultWidth} x ${defaultHeight}`;
 });
